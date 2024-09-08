@@ -1,4 +1,7 @@
 import React from "react";
+import { FaInstagram } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithubSquare } from "react-icons/fa";
 
 function Navbar() {
   return (
@@ -13,7 +16,11 @@ function Navbar() {
         </ul>
       </div>
       <div>
-        <button>Sign-up</button>
+        <div className="flex justify-center gap-4 text-4xl py-2">
+          <FaInstagram />
+          <FaLinkedin />
+          <FaGithubSquare />
+        </div>
       </div>
     </div>
   );

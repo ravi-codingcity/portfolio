@@ -1,54 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import Bg_SVG from "../assets/svgexport.svg";
-import Bg_base from "../assets/homebase.svg";
-import Icon_1 from "../assets/cc1.svg";
 import Navbar from "./Navbar";
 import Tech_tab from "./Tech_tab";
+import Portfolio from "./Portfolio";
+import Footer from "./Footer";
+import ScrollToTopButton from "./ScrollTop";
+import Blogs from "./Blogs";
+import All_1 from "../assets/All_1.jpg";
+import { FaReact } from "react-icons/fa";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { FaHtml5 } from "react-icons/fa";
+import { IoLogoCss3 } from "react-icons/io";
+import { FaWordpress } from "react-icons/fa";
+import { FaShopify } from "react-icons/fa";
+import { TbBrandJavascript } from "react-icons/tb";
+
+import {
+  SiAdobephotoshop,
+  SiAdobeillustrator,
+  SiAdobeaftereffects,
+  SiCoreldraw,
+  SiAdobepremierepro,
+} from "react-icons/si";
+import Experience from "./Experience";
 
 function Homepage() {
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const images = [
-    {
-      src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
-      category: "Shoes",
-    },
-    {
-      src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",
-      category: "Bags",
-    },
-    {
-      src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg",
-      category: "Electronics",
-    },
-    {
-      src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg",
-      category: "Gaming",
-    },
-    {
-      src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg",
-      category: "Shoes",
-    },
-    {
-      src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg",
-      category: "Bags",
-    },
-    {
-      src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg",
-      category: "Electronics",
-    },
-    {
-      src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg",
-      category: "Gaming",
-    },
-    // Add more images with categories as needed
-  ];
-
-  const filteredImages =
-    activeCategory === "All"
-      ? images
-      : images.filter((image) => image.category === activeCategory);
-
   return (
     <div
       className="bg-[#030014]  text-white"
@@ -76,10 +52,6 @@ function Homepage() {
         </button>
       </div>
 
-      <div className="  text-white  mt-10 h-[450px] ">
-        <img src={Bg_base} alt="" className="m-auto" />
-      </div>
-
       <div className="text-center">
         <button className="py-4">Some of Main Features</button>
         <h1 className="text-6xl font-bold py-4">Key Features of Our Tool</h1>
@@ -89,105 +61,86 @@ function Homepage() {
           efficient, accurate, and enjoyable.
         </p>
         <div className="flex flex-wrap w-8/12 items-center justify-center m-auto py-4 gap-5 ">
+          <Tech_tab icon={<FaReact className=" m-auto" />} title={"React Js"} />
           <Tech_tab
-            icon={Icon_1}
-            title={"Intelligent Writing Assistance"}
-            desc={
-              "Our AI writing tool analyzes your content, suggests improvements,"
-            }
+            icon={<RiTailwindCssFill className="m-auto" />}
+            title={"Tailwind"}
+          />
+          <Tech_tab icon={<FaHtml5 className=" m-auto" />} title={"HTML"} />
+          <Tech_tab icon={<IoLogoCss3 className=" m-auto" />} title={"CSS"} />
+          <Tech_tab
+            icon={<TbBrandJavascript className=" m-auto" />}
+            title={"Javascript"}
           />
           <Tech_tab
-            icon={Icon_1}
-            title={"Intelligent Writing Assistance"}
-            desc={
-              "Our AI writing tool analyzes your content, suggests improvements,"
-            }
+            icon={<FaWordpress className=" m-auto" />}
+            title={"Wordpress"}
           />
           <Tech_tab
-            icon={Icon_1}
-            title={"Intelligent Writing Assistance"}
-            desc={
-              "Our AI writing tool analyzes your content, suggests improvements,"
-            }
+            icon={<FaShopify className=" m-auto" />}
+            title={"Shopify"}
           />
           <Tech_tab
-            icon={Icon_1}
-            title={"Intelligent Writing Assistance"}
-            desc={
-              "Our AI writing tool analyzes your content, suggests improvements,"
-            }
+            icon={<SiAdobephotoshop className=" m-auto" />}
+            title={"Photoshop"}
           />
           <Tech_tab
-            icon={Icon_1}
-            title={"Intelligent Writing Assistance"}
-            desc={
-              "Our AI writing tool analyzes your content, suggests improvements,"
-            }
+            icon={<SiAdobeillustrator className=" m-auto" />}
+            title={"Illustrator"}
           />
           <Tech_tab
-            icon={Icon_1}
-            title={"Intelligent Writing Assistance"}
-            desc={
-              "Our AI writing tool analyzes your content, suggests improvements,"
-            }
+            icon={<SiAdobepremierepro className=" m-auto" />}
+            title={"Premier Pro"}
+          />
+          <Tech_tab
+            icon={<SiAdobeaftereffects className=" m-auto" />}
+            title={"After Effect"}
+          />
+          <Tech_tab
+            icon={<SiCoreldraw className=" m-auto" />}
+            title={"Corel Draw"}
           />
         </div>
       </div>
 
       <div>
         <h1 className="text-6xl font-bold py-4 text-center">Portfolio</h1>
-        <div>
-          <div className="flex items-center justify-center py-4 md:py-8 flex-wrap">
-            <button
-              type="button"
-              className="text-blue-700 hover:text-white border border-blue-600 bg-white hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:bg-gray-900 dark:focus:ring-blue-800"
-              onClick={() => setActiveCategory("All")}
-            >
-              All categories
-            </button>
-            <button
-              type="button"
-              className="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800"
-              onClick={() => setActiveCategory("Shoes")}
-            >
-              Shoes
-            </button>
-            <button
-              type="button"
-              className="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800"
-              onClick={() => setActiveCategory("Bags")}
-            >
-              Bags
-            </button>
-            <button
-              type="button"
-              className="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800"
-              onClick={() => setActiveCategory("Electronics")}
-            >
-              Electronics
-            </button>
-            <button
-              type="button"
-              className="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800"
-              onClick={() => setActiveCategory("Gaming")}
-            >
-              Gaming
-            </button>
-          </div>
+        <Portfolio />
+      </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {filteredImages.map((image, index) => (
-              <div key={index}>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src={image.src}
-                  alt={image.category}
-                />
-              </div>
-            ))}
-          </div>
+      <div className="">
+        <h1 className="text-6xl font-bold py-10 text-center ">
+          Working Experience
+        </h1>
+        <Experience />
+      </div>
+
+      <div className="py-10">
+        <h1 className="text-6xl font-bold py-8 text-center">
+          Latest Blogs and News
+        </h1>
+        <div className="max-w-screen-lg grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 m-auto  justify-items-center">
+          <Blogs
+            img={All_1}
+            h="Revolution in Content Creation and Communication"
+            p="Lorem ipsum dolor sit amet, consectetur adipisc elit sed do eiusmod tempor incididunt ut labore et dolore magna oliumosd aliqua..."
+          />
+          <Blogs
+            img={All_1}
+            h="Revolution in Content Creation and Communication"
+            p="Lorem ipsum dolor sit amet, consectetur adipisc elit sed do eiusmod tempor incididunt ut labore et dolore magna oliumosd aliqua..."
+          />
+          <Blogs
+            img={All_1}
+            h="Revolution in Content Creation and Communication"
+            p="Lorem ipsum dolor sit amet, consectetur adipisc elit sed do eiusmod tempor incididunt ut labore et dolore magna oliumosd aliqua..."
+          />
         </div>
       </div>
+
+      <ScrollToTopButton />
+
+      <Footer />
     </div>
   );
 }
