@@ -7,9 +7,27 @@ function Footer() {
   return (
     <div className="pt-16">
       <div className="flex justify-center gap-4 text-4xl py-2">
-        <FaInstagram />
-        <FaLinkedin />
-        <FaGithubSquare />
+        <a
+          href="https://www.linkedin.com/in/ravi-chaudhary-coding-city/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedin />
+        </a>
+        <a
+          href="https://www.instagram.com/mr.chaudhary108"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaInstagram />
+        </a>
+        <a
+          href="https://github.com/ravi-codingcity"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithubSquare />
+        </a>
       </div>
 
       <div className="text-center py-4">All Right Reserved | 2024</div>
